@@ -1,0 +1,140 @@
+[gd_scene load_steps=19 format=3 uid="uid://5yv7lw5gs4hu"]
+
+[ext_resource type="PackedScene" uid="uid://c6l0o750q5e4e" path="res://objects/key_listener.tscn" id="1_qc6i3"]
+[ext_resource type="Script" uid="uid://gg04cj8b13y6" path="res://backgrounds/camera_2d.gd" id="1_smvv8"]
+[ext_resource type="Texture2D" uid="uid://sshbbgrejkvc" path="res://backgrounds/sketch1757195962206.png" id="1_wtvao"]
+[ext_resource type="Texture2D" uid="uid://dj1dgawi0p08h" path="res://art/drive-download-20250907T042316Z-1-001/sketch1757193727864.png" id="2_n7yt8"]
+[ext_resource type="Texture2D" uid="uid://dum6q5fpd1bgl" path="res://backgrounds/sketch1757195969457.png" id="2_smvv8"]
+[ext_resource type="Texture2D" uid="uid://u7pblm81fore" path="res://backgrounds/sketch1757195977121.png" id="3_5kejm"]
+[ext_resource type="PackedScene" uid="uid://bypmxnqj3bmkt" path="res://levels/game_ui.tscn" id="3_d65c1"]
+[ext_resource type="Texture2D" uid="uid://ck3mbn2x5gkdl" path="res://art/drive-download-20250907T042316Z-1-001/sketch1757193738004.png" id="3_jyjt4"]
+[ext_resource type="Texture2D" uid="uid://dabfwey383w3a" path="res://art/drive-download-20250907T042316Z-1-001/sketch1757193745176.png" id="4_gehph"]
+[ext_resource type="PackedScene" uid="uid://d4i5om6bgr86w" path="res://objects/level_editor.tscn" id="4_n0b0m"]
+[ext_resource type="Texture2D" uid="uid://b6b8lwuq1mo04" path="res://art/drive-download-20250907T042316Z-1-001/sketch1757193753172.png" id="5_qmvb7"]
+[ext_resource type="Texture2D" uid="uid://b5f0shgk8hqsh" path="res://art/drive-download-20250907T042316Z-1-001/sketch1757193760526.png" id="6_k1cdv"]
+[ext_resource type="Texture2D" uid="uid://yc21g42q0dj7" path="res://art/drive-download-20250907T042316Z-1-001/sketch1757193777790.png" id="7_rs00r"]
+[ext_resource type="Texture2D" uid="uid://mllgf8gksswv" path="res://art/drive-download-20250907T042316Z-1-001/sketch1757193769154.png" id="8_2bx2d"]
+[ext_resource type="Script" uid="uid://j3027txnkduv" path="res://backgrounds/canvas_layer.gd" id="8_5kejm"]
+[ext_resource type="Texture2D" uid="uid://cq0yunk406ifl" path="res://art/drive-download-20250907T042316Z-1-001/sketch1757193785739.png" id="9_4edbn"]
+
+[sub_resource type="GDScript" id="GDScript_5kejm"]
+script/source = "extends ParallaxBackground
+
+@export var scroll_speed: float = 100.0 
+
+func _process(delta: float) -> void:
+	scroll_offset.x += scroll_speed * delta
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_876hk"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n7yt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jyjt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gehph")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_qmvb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k1cdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rs00r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2bx2d")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_4edbn")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]
+
+[node name="GameLevel" type="Node2D"]
+
+[node name="GameUI" parent="." instance=ExtResource("3_d65c1")]
+offset_left = -396.0
+offset_top = -264.0
+offset_right = -396.0
+offset_bottom = -264.0
+scale = Vector2(0.32806, 0.905753)
+
+[node name="LevelEditor" parent="." instance=ExtResource("4_n0b0m")]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="Background"]
+position = Vector2(0, -3)
+rotation = nan
+scale = Vector2(nan, 1e-05)
+skew = nan
+script = ExtResource("1_smvv8")
+
+[node name="Background" type="ParallaxBackground" parent="Background"]
+script = SubResource("GDScript_5kejm")
+
+[node name="BackgroundLayer" type="ParallaxLayer" parent="Background/Background"]
+motion_mirroring = Vector2(5940, 0)
+
+[node name="bg1" type="Sprite2D" parent="Background/Background/BackgroundLayer"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_wtvao")
+
+[node name="bg2" type="Sprite2D" parent="Background/Background/BackgroundLayer"]
+position = Vector2(1980, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_smvv8")
+flip_h = true
+
+[node name="bg3" type="Sprite2D" parent="Background/Background/BackgroundLayer"]
+position = Vector2(3960, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_5kejm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("8_5kejm")
+
+[node name="BgCharacter" type="Node2D" parent="CanvasLayer"]
+
+[node name="CharacterAnim" type="AnimatedSprite2D" parent="CanvasLayer/BgCharacter"]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_876hk")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.659521
+
+[node name="KeyListener" parent="CanvasLayer" instance=ExtResource("1_qc6i3")]
+position = Vector2(-800, 600)
+scale = Vector2(0.8, 0.8)
+key_name = "button_W"
+
+[node name="KeyListener2" parent="CanvasLayer" instance=ExtResource("1_qc6i3")]
+position = Vector2(-450, 600)
+scale = Vector2(0.8, 0.8)
+frame = 1
+key_name = "button_A"
+
+[node name="KeyListener3" parent="CanvasLayer" instance=ExtResource("1_qc6i3")]
+position = Vector2(450, 600)
+scale = Vector2(0.8, 0.8)
+frame = 2
+key_name = "button_D"
+
+[node name="KeyListener4" parent="CanvasLayer" instance=ExtResource("1_qc6i3")]
+position = Vector2(800, 600)
+scale = Vector2(0.8, 0.8)
+frame = 3
+key_name = "button_S"
