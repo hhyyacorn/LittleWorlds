@@ -49,7 +49,8 @@ func _on_song_finished():
 	end_level()
 
 func end_level():
-	pass
+	GameState.last_score = GameState.score
+	get_tree().change_scene_to_file("res://reality_reward_screen.tscn")
 
 func SpawnFallingKey(button_name: String, delay: float):
 	await get_tree().create_timer(delay).timeout

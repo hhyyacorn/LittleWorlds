@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvt2smbr2sbvf" path="res://levels/game_ui.gd" id="1_451jp"]
 [ext_resource type="FontFile" uid="uid://b65lbo4u6iuay" path="res://art/TabelSans-9MqPB.otf" id="2_tpbhn"]
-[ext_resource type="Script" uid="uid://j3027txnkduv" path="res://backgrounds/canvas_layer.gd" id="2_ul118"]
+[ext_resource type="Script" uid="uid://j3027txnkduv" path="res://art/backgrounds/canvas_layer.gd" id="2_ul118"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3

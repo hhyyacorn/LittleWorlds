@@ -18,6 +18,7 @@ config/icon="res://godot stuff/icon.svg"
 [autoload]
 
 Signals="*res://objects/signals.gd"
+GameState="*res://objects/GameState.gd"
 
 [display]
 
