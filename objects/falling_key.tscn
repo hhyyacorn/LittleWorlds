@@ -5,7 +5,6 @@
 
 [node name="FallingKey" type="Sprite2D"]
 self_modulate = Color(1, 1, 1, 0.764706)
-scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_rfl2t")
 hframes = 4
 vframes = 3

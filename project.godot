@@ -13,7 +13,7 @@ config_version=5
 config/name="Little Worlds"
 run/main_scene="uid://5yv7lw5gs4hu"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://godot stuff/icon.svg"
 
 [autoload]
 
@@ -21,7 +21,7 @@ Signals="*res://objects/signals.gd"
 
 [display]
 
-window/size/viewport_width=1980
+window/size/viewport_width=2700
 window/size/viewport_height=1530
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
@@ -30,6 +30,10 @@ window/stretch/scale=0.5
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [input]
 

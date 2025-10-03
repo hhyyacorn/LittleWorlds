@@ -18,6 +18,7 @@ func _ready():
 		
 		$MusicPlayer.stream = level_info.get(current_level_name).get("music")
 		$MusicPlayer.play()
+		$MusicPlayer.finished.connect(_on_song_finished)
 		
 		if in_edit_mode:
 			pass
@@ -44,6 +45,11 @@ func _ready():
 					
 				counter += 1
 				
+func _on_song_finished():
+	end_level()
+
+func end_level():
+	pass
 
 func SpawnFallingKey(button_name: String, delay: float):
 	await get_tree().create_timer(delay).timeout
