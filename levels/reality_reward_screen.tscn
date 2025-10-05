@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnc3renhowns7"]
+[gd_scene load_steps=6 format=3 uid="uid://bnc3renhowns7"]
 
 [ext_resource type="Texture2D" uid="uid://2kcm4kkki2jv" path="res://art/rewardbackpack/sketch1759626793522.png" id="1_p5ymx"]
 [ext_resource type="Texture2D" uid="uid://dqqipxbak1yot" path="res://art/rewardbackpack/sketch1759627128610.png" id="2_t8xrn"]
 [ext_resource type="Texture2D" uid="uid://bvxe84tk2v66k" path="res://art/rewardbackpack/sketch1759627119287.png" id="3_cl0rl"]
 [ext_resource type="FontFile" uid="uid://cjhgmp2llhvhv" path="res://art/font/Christmas Chalk.ttf" id="4_7nd2h"]
+[ext_resource type="AudioStream" uid="uid://dqrqtjdan7num" path="res://music/rain.mp3" id="5_7nd2h"]
 
 [node name="RealityRewardScreen" type="Node2D"]
 
@@ -12,6 +13,10 @@ z_index = -1
 position = Vector2(-3.8147e-06, 0)
 scale = Vector2(1.0003, 0.7)
 texture = ExtResource("2_t8xrn")
+
+[node name="Camera2D" type="Camera2D" parent="bgMain"]
+position = Vector2(3.81356e-06, 0)
+scale = Vector2(0.9997, 1.42857)
 
 [node name="bag1" type="Sprite2D" parent="."]
 visible = false
@@ -46,5 +51,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(1, 1)
+[node name="Rain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7nd2h")
+autoplay = true
+parameters/looping = true
