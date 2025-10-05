@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bypmxnqj3bmkt"]
 
 [ext_resource type="Script" uid="uid://bvt2smbr2sbvf" path="res://levels/game_ui.gd" id="1_451jp"]
-[ext_resource type="FontFile" uid="uid://b65lbo4u6iuay" path="res://art/TabelSans-9MqPB.otf" id="2_tpbhn"]
 [ext_resource type="Script" uid="uid://j3027txnkduv" path="res://art/backgrounds/canvas_layer.gd" id="2_ul118"]
+[ext_resource type="FontFile" uid="uid://cjhgmp2llhvhv" path="res://art/font/Christmas Chalk.ttf" id="3_ul118"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -21,14 +21,15 @@ script = ExtResource("2_ul118")
 
 [node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
 offset_left = -991.0
-offset_top = -694.0
-offset_right = -903.0
-offset_bottom = -648.0
+offset_top = -685.0
+offset_right = -887.0
+offset_bottom = -615.0
 scale = Vector2(2, 1.749)
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_tpbhn")
-theme_override_font_sizes/normal_font_size = 45
+theme_override_fonts/normal_font = ExtResource("3_ul118")
+theme_override_font_sizes/normal_font_size = 40
 text = "0 pts"
 fit_content = true
 scroll_active = false
@@ -36,14 +37,15 @@ autowrap_mode = 0
 
 [node name="ComboLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
 offset_left = -991.0
-offset_top = -575.0
-offset_right = -832.0
-offset_bottom = -529.0
+offset_top = -580.0
+offset_right = -795.0
+offset_bottom = -510.0
 scale = Vector2(2, 1.749)
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_tpbhn")
-theme_override_font_sizes/normal_font_size = 45
+theme_override_fonts/normal_font = ExtResource("3_ul118")
+theme_override_font_sizes/normal_font_size = 40
 text = "0x combo"
 fit_content = true
 scroll_active = false

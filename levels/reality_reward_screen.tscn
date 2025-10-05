@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnc3renhowns7"]
+
+[ext_resource type="Texture2D" uid="uid://2kcm4kkki2jv" path="res://art/rewardbackpack/sketch1759626793522.png" id="1_p5ymx"]
+[ext_resource type="Texture2D" uid="uid://dqqipxbak1yot" path="res://art/rewardbackpack/sketch1759627128610.png" id="2_t8xrn"]
+[ext_resource type="Texture2D" uid="uid://bvxe84tk2v66k" path="res://art/rewardbackpack/sketch1759627119287.png" id="3_cl0rl"]
+[ext_resource type="FontFile" uid="uid://cjhgmp2llhvhv" path="res://art/font/Christmas Chalk.ttf" id="4_7nd2h"]
+
+[node name="RealityRewardScreen" type="Node2D"]
+
+[node name="bgMain" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(1.0003, 0.7)
+texture = ExtResource("2_t8xrn")
+
+[node name="bag1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-40, 0)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_p5ymx")
+
+[node name="testGrade" type="Sprite2D" parent="."]
+position = Vector2(0, -70)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_cl0rl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -755.5
+offset_top = 460.0
+offset_right = 755.5
+offset_bottom = 748.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_7nd2h")
+theme_override_font_sizes/normal_font_size = 60
+text = "For effort, because I haven't done the specific reward stuff yet :D Thanks for playing > <!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1, 1)

@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnc3renhowns7"]
-
-[ext_resource type="Texture2D" uid="uid://sshbbgrejkvc" path="res://art/backgrounds/sketch1757195962206.png" id="1_8gy0r"]
-
-[node name="RealityRewardScreen" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_8gy0r")

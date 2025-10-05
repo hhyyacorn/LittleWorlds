@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://1cmoai28tu03"]
 
 [ext_resource type="Script" uid="uid://bo7rubik3747i" path="res://objects/score_press_text.gd" id="1_t2hdy"]
-[ext_resource type="FontFile" uid="uid://b65lbo4u6iuay" path="res://art/TabelSans-9MqPB.otf" id="2_p1swk"]
+[ext_resource type="FontFile" uid="uid://b65lbo4u6iuay" path="res://art/font/TabelSans-9MqPB.otf" id="2_p1swk"]
 
 [sub_resource type="Theme" id="Theme_p1swk"]
 

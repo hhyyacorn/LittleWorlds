@@ -1,6 +1,5 @@
 extends Node2D
 
-
 const in_edit_mode: bool = false
 var current_level_name = "reality"
 
@@ -15,7 +14,6 @@ var level_info = {
 }
 
 func _ready():
-		
 		$MusicPlayer.stream = level_info.get(current_level_name).get("music")
 		$MusicPlayer.play()
 		$MusicPlayer.finished.connect(_on_song_finished)

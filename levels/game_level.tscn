@@ -6,17 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://dum6q5fpd1bgl" path="res://art/backgrounds/sketch1757195969457.png" id="2_smvv8"]
 [ext_resource type="Texture2D" uid="uid://u7pblm81fore" path="res://art/backgrounds/sketch1757195977121.png" id="3_5kejm"]
 [ext_resource type="PackedScene" uid="uid://bypmxnqj3bmkt" path="res://levels/game_ui.tscn" id="3_d65c1"]
-[ext_resource type="FontFile" uid="uid://b65lbo4u6iuay" path="res://art/TabelSans-9MqPB.otf" id="4_jyjt4"]
+[ext_resource type="FontFile" uid="uid://cjhgmp2llhvhv" path="res://art/font/Christmas Chalk.ttf" id="4_jyjt4"]
 [ext_resource type="PackedScene" uid="uid://d4i5om6bgr86w" path="res://objects/level_editor.tscn" id="4_n0b0m"]
-[ext_resource type="Texture2D" uid="uid://b2vkdlcwhm8x2" path="res://art/img/sketch1757480661194.png" id="4_n7yt8"]
-[ext_resource type="Texture2D" uid="uid://cd0t0m2nsbxtb" path="res://art/img/sketch1757480881529.png" id="5_jyjt4"]
-[ext_resource type="Texture2D" uid="uid://blwojsn81qw4d" path="res://art/img/sketch1757480891550.png" id="6_gehph"]
-[ext_resource type="Texture2D" uid="uid://bme64uidh34a4" path="res://art/img/sketch1757568277736.png" id="7_qmvb7"]
+[ext_resource type="Texture2D" uid="uid://b2vkdlcwhm8x2" path="res://art/character_anim/sketch1757480661194.png" id="4_n7yt8"]
+[ext_resource type="Texture2D" uid="uid://cd0t0m2nsbxtb" path="res://art/character_anim/sketch1757480881529.png" id="5_jyjt4"]
+[ext_resource type="Texture2D" uid="uid://blwojsn81qw4d" path="res://art/character_anim/sketch1757480891550.png" id="6_gehph"]
+[ext_resource type="Texture2D" uid="uid://bme64uidh34a4" path="res://art/character_anim/sketch1757568277736.png" id="7_qmvb7"]
 [ext_resource type="Script" uid="uid://j3027txnkduv" path="res://art/backgrounds/canvas_layer.gd" id="8_5kejm"]
-[ext_resource type="Texture2D" uid="uid://db16ftnuka302" path="res://art/img/sketch1757480910217.png" id="8_k1cdv"]
-[ext_resource type="Texture2D" uid="uid://wan7du001qhv" path="res://art/img/sketch1757480918634.png" id="9_rs00r"]
-[ext_resource type="Texture2D" uid="uid://b1jhk62p8cph1" path="res://art/img/sketch1757480926256.png" id="10_2bx2d"]
-[ext_resource type="Texture2D" uid="uid://clae3jnld40tk" path="res://art/img/sketch1757568288013.png" id="11_4edbn"]
+[ext_resource type="Texture2D" uid="uid://db16ftnuka302" path="res://art/character_anim/sketch1757480910217.png" id="8_k1cdv"]
+[ext_resource type="Texture2D" uid="uid://wan7du001qhv" path="res://art/character_anim/sketch1757480918634.png" id="9_rs00r"]
+[ext_resource type="Texture2D" uid="uid://b1jhk62p8cph1" path="res://art/character_anim/sketch1757480926256.png" id="10_2bx2d"]
+[ext_resource type="Texture2D" uid="uid://clae3jnld40tk" path="res://art/character_anim/sketch1757568288013.png" id="11_4edbn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_876hk"]
 animations = [{
@@ -66,14 +66,15 @@ func _process(delta: float) -> void:
 
 [node name="GameLevel" type="Node2D"]
 
+[node name="LevelEditor" parent="." instance=ExtResource("4_n0b0m")]
+
 [node name="GameUI" parent="." instance=ExtResource("3_d65c1")]
 offset_left = -396.0
 offset_top = -264.0
 offset_right = -396.0
 offset_bottom = -264.0
 scale = Vector2(0.32806, 0.905753)
-
-[node name="LevelEditor" parent="." instance=ExtResource("4_n0b0m")]
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("8_5kejm")
@@ -84,14 +85,14 @@ position = Vector2(0, 10)
 [node name="WLabel" type="RichTextLabel" parent="CanvasLayer/Labels"]
 modulate = Color(0, 0, 0, 1)
 offset_left = -857.0
-offset_top = 694.0
+offset_top = 690.0
 offset_right = -764.0
-offset_bottom = 778.0
+offset_bottom = 784.0
 scale = Vector2(1.04, 1)
 theme_override_fonts/normal_font = ExtResource("4_jyjt4")
-theme_override_font_sizes/normal_font_size = 66
+theme_override_font_sizes/normal_font_size = 54
 bbcode_enabled = true
-text = "[center]W"
+text = "[center]w"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -101,31 +102,14 @@ vertical_alignment = 1
 [node name="ALabel" type="RichTextLabel" parent="CanvasLayer/Labels"]
 modulate = Color(0, 0, 0, 1)
 offset_left = -512.0
-offset_top = 694.0
+offset_top = 690.0
 offset_right = -419.0
-offset_bottom = 778.0
+offset_bottom = 790.0
 scale = Vector2(1.04, 1)
 theme_override_fonts/normal_font = ExtResource("4_jyjt4")
-theme_override_font_sizes/normal_font_size = 66
+theme_override_font_sizes/normal_font_size = 57
 bbcode_enabled = true
-text = "[center]A"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="DLabel" type="RichTextLabel" parent="CanvasLayer/Labels"]
-modulate = Color(0, 0, 0, 1)
-offset_left = 750.0
-offset_top = 694.0
-offset_right = 843.0
-offset_bottom = 778.0
-scale = Vector2(1.04, 1)
-theme_override_fonts/normal_font = ExtResource("4_jyjt4")
-theme_override_font_sizes/normal_font_size = 66
-bbcode_enabled = true
-text = "[center]D"
+text = "[center]a"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -135,14 +119,31 @@ vertical_alignment = 1
 [node name="SLabel2" type="RichTextLabel" parent="CanvasLayer/Labels"]
 modulate = Color(0, 0, 0, 1)
 offset_left = 401.0
-offset_top = 694.0
+offset_top = 688.0
 offset_right = 494.0
-offset_bottom = 778.0
+offset_bottom = 782.0
 scale = Vector2(1.04, 1)
 theme_override_fonts/normal_font = ExtResource("4_jyjt4")
-theme_override_font_sizes/normal_font_size = 66
+theme_override_font_sizes/normal_font_size = 54
 bbcode_enabled = true
-text = "[center]S"
+text = "[center]s"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DLabel" type="RichTextLabel" parent="CanvasLayer/Labels"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 750.0
+offset_top = 690.0
+offset_right = 843.0
+offset_bottom = 784.0
+scale = Vector2(1.04, 1)
+theme_override_fonts/normal_font = ExtResource("4_jyjt4")
+theme_override_font_sizes/normal_font_size = 54
+bbcode_enabled = true
+text = "[center]d"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -184,29 +185,25 @@ key_name = "button_S"
 
 [node name="Background" type="Node2D" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="Background"]
-position = Vector2(0, -3)
-rotation = nan
-scale = Vector2(nan, 1e-05)
-skew = nan
+[node name="RealityCamera" type="Camera2D" parent="Background"]
 script = ExtResource("1_smvv8")
 
-[node name="Background" type="ParallaxBackground" parent="Background"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
 offset = Vector2(0, 30)
 transform = Transform2D(1, 0, 0, 1, 0, 30)
 script = SubResource("GDScript_5kejm")
 
-[node name="BackgroundLayer" type="ParallaxLayer" parent="Background/Background"]
+[node name="BackgroundLayer" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 motion_scale = Vector2(-1, 1)
 motion_mirroring = Vector2(5940, 0)
 
-[node name="bg1" type="Sprite2D" parent="Background/Background/BackgroundLayer"]
+[node name="bg1" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundLayer"]
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_wtvao")
 centered = false
 offset = Vector2(0, -1275)
 
-[node name="bg2" type="Sprite2D" parent="Background/Background/BackgroundLayer"]
+[node name="bg2" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundLayer"]
 position = Vector2(1980, 0)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_smvv8")
@@ -214,7 +211,7 @@ centered = false
 offset = Vector2(0, -1275)
 flip_h = true
 
-[node name="bg3" type="Sprite2D" parent="Background/Background/BackgroundLayer"]
+[node name="bg3" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundLayer"]
 position = Vector2(3960, 0)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_5kejm")
